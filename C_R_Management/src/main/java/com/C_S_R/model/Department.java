@@ -1,8 +1,8 @@
-package com.hardware_software_support.model;
+package com.C_S_R.model;
 
 public class Department {
 	 
-	private int deptid;
+	private int productId;
 	private String dName;
 	private String location;
 	
@@ -10,17 +10,17 @@ public class Department {
 
 	public Department(int deptid, String dName, String location) {
 		super();
-		this.deptid = deptid;
+		this.productId = deptid;
 		this.dName = dName;
 		this.location = location;
 	}
 
-	public int getDeptid() {
-		return deptid;
+	public int getProductId() {
+		return productId;
 	}
 
-	public void setDeptid(int deptid) {
-		this.deptid = deptid;
+	public void setProductId(int deptid) {
+		this.productId = deptid;
 	}
 
 	public String getdName() {
@@ -41,7 +41,8 @@ public class Department {
 
 	@Override
 	public String toString() {
-		return "Department [deptid=" + deptid + ", dName=" + dName + ", location=" + location + "]";
+		return "Department [productId=" + productId + ", dName=" + dName + ", location=" + location + "]";
 	}
+
 	
 }

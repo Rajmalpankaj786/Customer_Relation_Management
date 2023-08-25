@@ -1,38 +1,38 @@
-package com.hardware_software_support.model;
+package com.C_S_R.model;
 
-public class Employee {
+public class Customer {
 
-	private int empId;
-	private int deptid;
+	private int cusId;
+	private int productId;
 	private String name;
 	private String userName;
 	private String password;
 	
-	public Employee() {}
+	public Customer() {}
 
-	public Employee(int empId, int deptid, String name, String userName, String password) {
+	public Customer(int cusId, int deptid, String name, String userName, String password) {
 		super();
-		this.empId = empId;
-		this.deptid = deptid;
+		this.cusId = cusId;
+		this.productId = deptid;
 		this.name = name;
 		this.userName = userName;
 		this.password = password;
 	}
 
-	public int getEmpId() {
-		return empId;
+	public int getCusId() {
+		return cusId;
 	}
 
-	public void setEmpId(int empId) {
-		this.empId = empId;
+	public void setCusId(int empId) {
+		this.cusId = empId;
 	}
 
-	public int getDeptid() {
-		return deptid;
+	public int getProductId() {
+		return productId;
 	}
 
-	public void setDeptid(int deptid) {
-		this.deptid = deptid;
+	public void setProductId(int deptid) {
+		this.productId = deptid;
 	}
 
 	public String getName() {
@@ -61,9 +61,10 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return "Employee [empId=" + empId + ", deptid=" + deptid + ", name=" + name + ", userName=" + userName
+		return "Customer [cusId=" + cusId + ", deptid=" + productId + ", name=" + name + ", userName=" + userName
 				+ ", password=" + password + "]";
 	}
+
 	
 	
 }
