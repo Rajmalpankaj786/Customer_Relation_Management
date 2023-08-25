@@ -1,18 +1,18 @@
-package com.hardware_software_support.model;
+package com.C_S_R.model;
 
-public class Engineer {
+public class ServiceProvider {
 	
-	private int engId;
+	private int serpId;
 	private String name;
 	private String userName;
 	private String password;
 	private String type;
 	private String location;
 	
-	public Engineer() {}
+	public ServiceProvider() {}
 
-	public Engineer(int engId, String name, String userName, String password, String type, String location) {
-		this.engId = engId;
+	public ServiceProvider(int spId, String name, String userName, String password, String type, String location) {
+		this.serpId = spId;
 		this.name = name;
 		this.userName = userName;
 		this.password = password;
@@ -20,12 +20,12 @@ public class Engineer {
 		this.location = location;
 	}
 
-	public int getEngId() {
-		return engId;
+	public int getSerpId() {
+		return serpId;
 	}
 
-	public void setEngId(int engId) {
-		this.engId = engId;
+	public void setSerpId(int engId) {
+		this.serpId = engId;
 	}
 
 	public String getName() {
@@ -70,7 +70,7 @@ public class Engineer {
 
 	@Override
 	public String toString() {
-		return "Engineer [engId=" + engId + ", name=" + name + ", userName=" + userName + ", password=" + password
+		return "Engineer [engId=" + serpId + ", name=" + name + ", userName=" + userName + ", password=" + password
 				+ ", type=" + type + ", location=" + location + "]";
 	}
 	

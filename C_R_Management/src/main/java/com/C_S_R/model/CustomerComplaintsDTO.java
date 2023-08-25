@@ -1,48 +1,52 @@
-package com.hardware_software_support.model;
+package com.C_S_R.model;
 
-import java.sql.Date;
-//import java.util.Date;
+import java.util.Date;
 
-public class EngineerComplaintsDTO {
+public class CustomerComplaintsDTO {
 	
-	private int engId;
+	private int cusId;
+	private int productId;
 	private String name;
 	private String userName;
 	private String password;
-	private String type;
-	private String location;
 	private int complaintId;
-	private int empId;
 	private String complaintType;
+	private int serpId;
 	private String status;
 	private Date dateRaised;
 	private String dateResolved;
+	
+	public CustomerComplaintsDTO() {}
 
-	public EngineerComplaintsDTO() {}
-
-	public EngineerComplaintsDTO(int engId, String name, String userName, String password, String type, String location,
-			int complaintId, int empId, String complaintType, String status, Date dateRaised, String dateResolved) {
-		super();
-		this.engId = engId;
+	public CustomerComplaintsDTO(int empId, int deptid, String name, String userName, String password, int complaintId,
+			String complaintType, int engId, String status, Date dateRaised, String dateResolved) {
+		this.cusId = empId;
+		this.productId = deptid;
 		this.name = name;
 		this.userName = userName;
 		this.password = password;
-		this.type = type;
-		this.location = location;
 		this.complaintId = complaintId;
-		this.empId = empId;
 		this.complaintType = complaintType;
+		this.serpId = engId;
 		this.status = status;
 		this.dateRaised = dateRaised;
 		this.dateResolved = dateResolved;
 	}
 
-	public int getEngId() {
-		return engId;
+	public int getCusId() {
+		return cusId;
 	}
 
-	public void setEngId(int engId) {
-		this.engId = engId;
+	public void setCusId(int empId) {
+		this.cusId = empId;
+	}
+
+	public int getProductId() {
+		return productId;
+	}
+
+	public void setProductId(int deptid) {
+		this.productId = deptid;
 	}
 
 	public String getName() {
@@ -69,22 +73,6 @@ public class EngineerComplaintsDTO {
 		this.password = password;
 	}
 
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
-	public String getLocation() {
-		return location;
-	}
-
-	public void setLocation(String location) {
-		this.location = location;
-	}
-
 	public int getComplaintId() {
 		return complaintId;
 	}
@@ -93,20 +81,20 @@ public class EngineerComplaintsDTO {
 		this.complaintId = complaintId;
 	}
 
-	public int getEmpId() {
-		return empId;
-	}
-
-	public void setEmpId(int empId) {
-		this.empId = empId;
-	}
-
 	public String getComplaintType() {
 		return complaintType;
 	}
 
 	public void setComplaintType(String complaintType) {
 		this.complaintType = complaintType;
+	}
+
+	public int getSerPId() {
+		return serpId;
+	}
+
+	public void setSerPId(int engId) {
+		this.serpId = engId;
 	}
 
 	public String getStatus() {
@@ -121,8 +109,8 @@ public class EngineerComplaintsDTO {
 		return dateRaised;
 	}
 
-	public void setDateRaised(Date date) {
-		this.dateRaised = date;
+	public void setDateRaised(Date dateRaised) {
+		this.dateRaised = dateRaised;
 	}
 
 	public String getDateResolved() {
@@ -135,10 +123,14 @@ public class EngineerComplaintsDTO {
 
 	@Override
 	public String toString() {
-		return "EngineerComplaintsDTO [engId=" + engId + ", name=" + name + ", userName=" + userName + ", password="
-				+ password + ", type=" + type + ", location=" + location + ", complaintId=" + complaintId + ", empId="
-				+ empId + ", complaintType=" + complaintType + ", status=" + status + ", dateRaised=" + dateRaised
+		return "CustomerComplaintsDTO [cusId=" + cusId + ", productId=" + productId + ", name=" + name + ", userName="
+				+ userName + ", password=" + password + ", complaintId=" + complaintId + ", complaintType="
+				+ complaintType + ", serpId=" + serpId + ", status=" + status + ", dateRaised=" + dateRaised
 				+ ", dateResolved=" + dateResolved + "]";
 	}
+
+	
+	
+	
 	
 }

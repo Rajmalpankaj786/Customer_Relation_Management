@@ -1,4 +1,4 @@
-package com.hardware_software_support.util;
+package com.C_S_R.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,13 +1,13 @@
-package com.hardware_software_support.model;
+package com.C_S_R.model;
 
 import java.sql.Date;
 
 public class Complaints {
 
 	private int complaintId;
-	private int empId;
+	private int cusId;
 	private String complaintType;
-	private int engId;
+	private int serpId;
 	private String status;
 	private Date dateRaised;
 	private Date dateResolved;
@@ -18,9 +18,9 @@ public class Complaints {
 			Date dateResolved) {
 		super();
 		this.complaintId = complaintId;
-		this.empId = empId;
+		this.cusId = empId;
 		this.complaintType = complaintType;
-		this.engId = engId;
+		this.serpId = engId;
 		this.status = status;
 		this.dateRaised = dateRaised;
 		this.dateResolved = dateResolved;
@@ -34,12 +34,12 @@ public class Complaints {
 		this.complaintId = complaintId;
 	}
 
-	public int getEmpId() {
-		return empId;
+	public int getCusId() {
+		return cusId;
 	}
 
-	public void setEmpId(int empId) {
-		this.empId = empId;
+	public void setCusId(int empId) {
+		this.cusId = empId;
 	}
 
 	public String getComplaintType() {
@@ -50,12 +50,12 @@ public class Complaints {
 		this.complaintType = complaintType;
 	}
 
-	public int getEngId() {
-		return engId;
+	public int getSerPId() {
+		return serpId;
 	}
 
-	public void setEngId(int engId) {
-		this.engId = engId;
+	public void setSerPId(int engId) {
+		this.serpId = engId;
 	}
 
 	public String getStatus() {
@@ -84,10 +84,12 @@ public class Complaints {
 
 	@Override
 	public String toString() {
-		return "Complaints [complaintId=" + complaintId + ", empId=" + empId + ", complaintType=" + complaintType
-				+ ", engId=" + engId + ", status=" + status + ", dateRaised=" + dateRaised + ", dateResolved="
+		return "Complaints [complaintId=" + complaintId + ", cusId=" + cusId + ", complaintType=" + complaintType
+				+ ", serpId=" + serpId + ", status=" + status + ", dateRaised=" + dateRaised + ", dateResolved="
 				+ dateResolved + "]";
 	}
+
+	
 	
 	
 }
