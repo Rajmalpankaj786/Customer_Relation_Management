@@ -9,23 +9,23 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.hardware_software_support.exceptions.ComplaintException;
-import com.hardware_software_support.exceptions.EmployeeException;
-import com.hardware_software_support.exceptions.EngineerException;
-import com.hardware_software_support.model.Complaints;
-import com.hardware_software_support.model.Engineer;
-import com.hardware_software_support.util.DBUtil;
-import com.mysql.cj.x.protobuf.MysqlxPrepare.Prepare;
+import com.C_S_R.exceptions.ComplaintException;
+import com.C_S_R.exceptions.ServiceProviderException;
+import com.C_S_R.model.Complaints;
+import com.C_S_R.model.ServiceProvider;
+
+//import com.mysql.cj.x.protobuf.MysqlxPrepare.Prepare;
+import com.C_S_R.util.DBUtil;
 
 public class ServiceProviderDaoImpl implements ServiceProviderDao{
 
 	@Override
-	public Engineer loginEngineer(String username, String password) throws EngineerException {
-		Engineer eng = new Engineer();
+	public ServiceProvider loginServiceProvider(String username, String password) throws ServiceProviderException {
+		ServiceProvider eng = new ServiceProvider();
 		
 		try(Connection conn = DBUtil.provideConnection()) {
 			
-			PreparedStatement ps = conn.prepareStatement("select * from engineer where username=? AND password=?");
+			PreparedStatement ps = conn.prepareStatement("select * from ServiceProvider where username=? AND password=?");
 			
 			ps.setString(1, username);
 			ps.setString(2, password);
@@ -33,19 +33,19 @@ public class ServiceProviderDaoImpl implements ServiceProviderDao{
 			ResultSet rs = ps.executeQuery();
 			
 			if(rs.next()) {
-				eng.setEngId(rs.getInt("engId"));
+				eng.setSerpId(rs.getInt("serpId"));
 				eng.setName(rs.getString("name"));
 				eng.setUserName(rs.getString("username"));
 				eng.setPassword(rs.getString("password"));
 				eng.setType(rs.getString("type"));
 				eng.setLocation(rs.getString("location"));
 			}else {
-				throw new EngineerException("Invalid username or password. Please try again.");
+				throw new ServiceProviderException("Invalid username or password. Please try again.");
 			}
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new EngineerException(e.getMessage());
+			throw new ServiceProviderException(e.getMessage());
 		}
 		return eng;
 	}
@@ -56,7 +56,7 @@ public class ServiceProviderDaoImpl implements ServiceProviderDao{
 		
 		try (Connection conn = DBUtil.provideConnection()){
 			
-			PreparedStatement ps = conn.prepareStatement("select * from complaints where engId=? AND status='Assigned'");
+			PreparedStatement ps = conn.prepareStatement("select * from complaints where serpId=? AND status='Assigned'");
 			
 			ps.setInt(1, engId);
 			
@@ -65,9 +65,9 @@ public class ServiceProviderDaoImpl implements ServiceProviderDao{
 				Complaints comp = new Complaints();
 				
 				comp.setComplaintId(rs.getInt("complaintId"));
-				comp.setEmpId(rs.getInt("empId"));
+				comp.setCusId(rs.getInt("empId"));
 				comp.setComplaintType(rs.getString("complaintType"));
-				comp.setEngId(rs.getInt("engId"));
+				comp.setSerPId(rs.getInt("engId"));
 				comp.setStatus(rs.getString("status"));
 				comp.setDateRaised(rs.getDate("dateRaised"));
 				comp.setDateResolved(rs.getDate("dateResolved"));
@@ -131,7 +131,7 @@ public class ServiceProviderDaoImpl implements ServiceProviderDao{
 		
 		try (Connection conn = DBUtil.provideConnection()){
 			
-			PreparedStatement ps = conn.prepareStatement("select * from complaints where engId=?");
+			PreparedStatement ps = conn.prepareStatement("select * from complaints where serpId=?");
 			
 			ps.setInt(1, engId);
 			
@@ -141,9 +141,9 @@ public class ServiceProviderDaoImpl implements ServiceProviderDao{
 				Complaints comp = new Complaints();
 				
 				comp.setComplaintId(rs.getInt("complaintId"));
-				comp.setEmpId(rs.getInt("empId"));
+				comp.setCusId(rs.getInt("cusId"));
 				comp.setComplaintType(rs.getString("complaintType"));
-				comp.setEngId(rs.getInt("engId"));
+				comp.setSerPId(rs.getInt("serpId"));
 				comp.setStatus(rs.getString("status"));
 				comp.setDateRaised(rs.getDate("dateRaised"));
 				comp.setDateResolved(rs.getDate("dateResolved"));
@@ -159,12 +159,12 @@ public class ServiceProviderDaoImpl implements ServiceProviderDao{
 	}
 
 	@Override
-	public String changeEngineerPassword(String username, String oldPassword, String newPassword) throws EngineerException {
+	public String changeServiceProviderPassword(String username, String oldPassword, String newPassword) throws ServiceProviderException {
 String res = "Password could not be changed. Please try again.";
 		
 		try (Connection conn = DBUtil.provideConnection()){
 			
-			PreparedStatement ps = conn.prepareStatement("update engineer set password=? where username=? and password=?");
+			PreparedStatement ps = conn.prepareStatement("update ServiceProvider set password=? where username=? and password=?");
 			
 			ps.setString(1, newPassword);
 			ps.setString(2, username);
@@ -175,12 +175,12 @@ String res = "Password could not be changed. Please try again.";
 			if(x>0) {
 				res = "Password changed successfully.";
 			}else {
-				throw new EngineerException("Wrong username or password entered. Please try again.");
+				throw new ServiceProviderException("Wrong username or password entered. Please try again.");
 			}
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new EngineerException(e.getMessage());
+			throw new ServiceProviderException(e.getMessage());
 		}
 		
 		return res;
