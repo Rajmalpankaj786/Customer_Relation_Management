@@ -23,8 +23,8 @@ public class Customer {
 		return cusId;
 	}
 
-	public void setCusId(int empId) {
-		this.cusId = empId;
+	public void setCusId(int cusId) {
+		this.cusId = cusId;
 	}
 
 	public int getProductId() {
