@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 import com.C_S_R.exceptions.ComplaintException;
 
-public class Main{
+public class ZMain{
 	public static void main(String[] args) {
-		
+		System.out.println("hey");
 	}
 	
 }
