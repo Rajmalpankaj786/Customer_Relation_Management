@@ -1,12 +1,11 @@
-package com.C_S_R.usecases;
+package com.C_S_R.DAO;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.C_S_R.exceptions.CustomerException;
-import com.C_S_R.DAO.CustomerDao;
-import com.C_S_R.DAO.CustomerDaoImpl;
+
 
 public class CustomerRegistration {
 	
@@ -17,7 +16,7 @@ public class CustomerRegistration {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Enter department id.");
-		int deptId = sc.nextInt();
+		int productId = sc.nextInt();
 		System.out.println("Enter name");
 		String name = sc.next();
 		System.out.println("Enter your username.");
@@ -41,7 +40,7 @@ public class CustomerRegistration {
 			CustomerDao dao = new CustomerDaoImpl();
 			
 			try {
-				String res = dao.registerCustomer(deptId, name, username, password);
+				String res = dao.registerCustomer(productId, name, username, password);
 				System.out.println(res);
 			} catch (CustomerException e) {
 				System.out.println(e.getMessage());
