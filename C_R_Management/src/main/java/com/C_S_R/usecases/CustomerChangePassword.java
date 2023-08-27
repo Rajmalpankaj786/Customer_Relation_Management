@@ -4,13 +4,14 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.hardware_software_support.DAO.EmployeeDao;
-import com.hardware_software_support.DAO.EmployeeDaoImpl;
-import com.hardware_software_support.exceptions.EmployeeException;
+import com.C_S_R.DAO.CustomerDao;
+import com.C_S_R.DAO.CustomerDaoImpl;
+import com.C_S_R.exceptions.CustomerException;
+
 
 public class CustomerChangePassword {
 
-	public void employeeChangePassword() {
+	public void CustomerChangePassword() {
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter your username");
@@ -32,12 +33,12 @@ public class CustomerChangePassword {
 		Matcher m = p.matcher(newPassword);
 		
 		if(m.matches()) {
-			EmployeeDao dao = new EmployeeDaoImpl();
+			CustomerDao dao = new CustomerDaoImpl();
 			
 			try {
-				String res = dao.changeEmployeePassword(username, oldPassword, newPassword);
+				String res = dao.changeCustomerPassword(username, oldPassword, newPassword);
 				System.out.println(res);
-			} catch (EmployeeException e) {
+			} catch (CustomerException e) {
 				// TODO Auto-generated catch block
 				System.out.println(e.getMessage());
 			}
