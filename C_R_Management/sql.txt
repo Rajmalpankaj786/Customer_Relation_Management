@@ -1,0 +1,127 @@
+create table Hod(
+    ->  HodId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    ->   name VARCHAR(30) NOT NULL,
+    ->  username VARCHAR(30) NOT NULL,
+    ->   password VARCHAR(30) NOT NULL
+    -> );
+
+mysql> desc hod;
++----------+-------------+------+-----+---------+----------------+
+| Field    | Type        | Null | Key | Default | Extra          |
++----------+-------------+------+-----+---------+----------------+
+| HodId    | int         | NO   | PRI | NULL    | auto_increment |
+| name     | varchar(30) | NO   |     | NULL    |                |
+| username | varchar(30) | NO   |     | NULL    |                |
+| password | varchar(30) | NO   |     | NULL    |                |
++----------+-------------+------+-----+---------+----------------+
+
+
+mysql> create table employee(
+    -> empId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    ->  depId int ,
+    ->  name VARCHAR(30) NOT NULL,
+    ->  username VARCHAR(30) NOT NULL,
+    ->  password VARCHAR(30) NOT NULL
+    -> );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> desc employee;
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| empId | int         | NO   | PRI | NULL    | auto_increment |
+| deptId  | int         | YES  |     | NULL    |                |
+| name       | varchar(30) | NO   |     | NULL    |                |
+| username   | varchar(30) | NO   |     | NULL    |                |
+| password   | varchar(30) | NO   |     | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
+
+mysql>  create table Engineer(
+    -> engID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    -> name VARCHAR(30) NOT NULL,
+    ->  username VARCHAR(30) NOT NULL,
+    ->  password VARCHAR(30) NOT NULL,
+    -> type VARCHAR(30),
+    ->  location VARCHAR(30) NOT NULL
+    -> );
+
+
+mysql> desc Engineer;
++-------------------+-------------+------+-----+---------+----------------+
+| Field             | Type        | Null | Key | Default | Extra          |
++-------------------+-------------+------+-----+---------+----------------+
+| engID | int         | NO   | PRI | NULL    | auto_increment |
+| name              | varchar(30) | NO   |     | NULL    |                |
+| username          | varchar(30) | NO   |     | NULL    |                |
+| password          | varchar(30) | NO   |     | NULL    |                |
+| type              | varchar(30) | YES  |     | NULL    |                |
+| location          | varchar(30) | NO   |     | NULL    |                |
++-------------------+-------------+------+-----+---------+----------------+
+
+mysql> CREATE TABLE Complaint (
+    ->     complaintId INT NOT NULL PRIMARY KEY,
+    -> empId int ,
+    -> complaintType VARCHAR(30),
+    -> engId int,
+    ->  status VARCHAR(20),
+    ->     dateRaised DATE,
+    ->     dateResolved DATE
+    -> );
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> desc  Complaint;
++-------------------+-------------+------+-----+---------+-------+
+| Field             | Type        | Null | Key | Default | Extra |
++-------------------+-------------+------+-----+---------+-------+
+| complaintId       | int         | NO   | PRI | NULL    |       |
+| empId        | int         | YES  |     | NULL    |       |
+| complaintType     | varchar(30) | YES  |     | NULL    |       |
+| ServiceProviderId | int         | YES  |     | NULL    |       |
+| status            | varchar(20) | YES  |     | NULL    |       |
+| dateRaised        | date        | YES  |     | NULL    |       |
+| dateResolved      | date        | YES  |     | NULL    |       |
++-------------------+-------------+------+-----+---------+-------+
+
+
+
+mysql> CREATE TABLE Department (
+    -> deptId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    ->     dname VARCHAR(30) NOT NULL UNIQUE,
+    ->     location VARCHAR(30) NOT NULL
+    -> );
+
+
+mysql> desc Department;
++-----------+-------------+------+-----+---------+----------------+
+| Field     | Type        | Null | Key | Default | Extra          |
++-----------+-------------+------+-----+---------+----------------+
+| deptId    | int         | NO   | PRI | NULL    | auto_increment |
+| dname     | varchar(30) | NO   | UNI | NULL    |                |
+| location  | varchar(30) | NO   |     | NULL    |                |
++-----------+-------------+------+-----+---------+----------------+
+
+
+mysql> use  hardware_software_support;
+Database changed
+mysql> show tables;
++--------------------------------------------+
+| Tables_in_hardware_software_support |
++--------------------------------------------+
+| complaint                                  |
+| employee                                   |
+| hod                                        |
+| department                                 |
+| engineer                                   |
++--------------------------------------------+
+5 rows in set (0.00 sec)
+
+mysql> insert into  Hod (HodId, name, username, password) VALUES (12345, 'admin', 'admin', 'Admin');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from Hod;
++-------+-------+----------+----------+
+| hodId | name  | username | password |
++-------+-------+----------+----------+
+| 12345 | admin | admin    | Admin    |
++-------+-------+----------+----------+
+
