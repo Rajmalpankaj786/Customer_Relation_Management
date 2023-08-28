@@ -1,7 +1,7 @@
 # Customer_Relation_Management
 
 ![ER (1)](https://github.com/Rajmalpankaj786/Customer_Relation_Management/assets/112754581/89d66059-9236-4268-aba0-2ba0a79e8b5a)
-The Console-based Customer Relationship Management (CRM) System is a software solution designed to enhance customer interactions, improve issue resolution, and overall customer satisfaction. The system aims to provide businesses with tools to efficiently manage customer issues and provide effective customer support. The CRM system will be developed using Java programming language, MySQL as the database management system, and Hibernate as the Object-Relational Mapping (ORM) framework.
+The Console-based Customer Relationship Management (CRM) System is a software solution designed to enhance customer interactions, improve issue resolution, and overall customer satisfaction. The system aims to provide businesses with tools to efficiently manage customer issues and provide effective customer support. The CRM system will be developed using Java programming language, MySQL as the database management system.
 
 Types of Users
 1.Hod
