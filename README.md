@@ -2,8 +2,8 @@
 The Console-based Customer Relationship Management (CRM) System is a software solution designed to enhance customer interactions, improve issue resolution, and overall customer satisfaction. The system aims to provide businesses with tools to efficiently manage customer issues and provide effective customer support. The CRM system will be developed using Java programming language, MySQL as the database management system, and Hibernate as the Object-Relational Mapping (ORM) framework.
 
 Types of Users
-Customer Support Representative
-Customer
+1.Customer Support Representative
+2.Customer
 
 Role of Customer Support Representative
 Register for a customer support representative account by providing necessary information.
