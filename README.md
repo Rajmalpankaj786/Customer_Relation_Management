@@ -1,26 +1,30 @@
 # Customer_Relation_Management
+
+![ER (1)](https://github.com/Rajmalpankaj786/Customer_Relation_Management/assets/112754581/89d66059-9236-4268-aba0-2ba0a79e8b5a)
 The Console-based Customer Relationship Management (CRM) System is a software solution designed to enhance customer interactions, improve issue resolution, and overall customer satisfaction. The system aims to provide businesses with tools to efficiently manage customer issues and provide effective customer support. The CRM system will be developed using Java programming language, MySQL as the database management system, and Hibernate as the Object-Relational Mapping (ORM) framework.
 
 Types of Users
-Customer Support Representative
-Customer
+1.Hod
+2.Engineer
+3.Employee
+
 
 Role of Customer Support Representative
-Register for a customer support representative account by providing necessary information.
-Log in to the customer support representative account using registered credentials.
-View and manage the issues raised by customers.
-Reply to customer issues, providing necessary assistance and information.
-Close the customer issues after resolution.
-View feedback given by customers on closed issues.
-Log out from the customer support representative account.
+Register for a Engineer support representative account by providing the necessary information.
+Log in to the Engineer support representative account using registered credentials.
+View and manage the issues raised by Engineer.
+Reply to Engineer issues, providing necessary assistance and information.
+Close the Engineer issues after resolution.
+View feedback given by Engineer on closed issues.
+Log out from the Employee support representative account.
 
-Role of Customer
-Register for a customer account by providing necessary information.
-Log in to the customer account using registered credentials.
+Role of Employee
+Register for a Employee account by providing necessary information.
+Log in to the Employee account using registered credentials.
 Raise an issue by providing a description of the problem.
 View the status of the raised issue, whether it is open or closed.
 Provide feedback once the issue is closed.
-Log out from the customer account.
+Log out from the Employee account.
 
 
 
